@@ -1,0 +1,201 @@
+[
+    {
+        "id": 1,
+        "ime": "Mohamed",
+        "prezime": "Salah",
+        "pozicija": "Napada\u010d",
+        "broj_dresa": 11,
+        "godine": 32,
+        "visina": 175,
+        "tezina": 71,
+        "drzava": "Egipat",
+        "godina_pridruzivanja": 2017,
+        "prosli_klubovi": [
+            {
+                "klub": "Chelsea",
+                "godina_pocetka": 2014,
+                "godina_zavrsetka": 2016
+            },
+            {
+                "klub": "AS Roma",
+                "godina_pocetka": 2016,
+                "godina_zavrsetka": 2017
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "ime": "Virgil",
+        "prezime": "van Dijk",
+        "pozicija": "Brani\u010d",
+        "broj_dresa": 4,
+        "godine": 33,
+        "visina": 193,
+        "tezina": 92,
+        "drzava": "Nizozemska",
+        "godina_pridruzivanja": 2018,
+        "prosli_klubovi": [
+            {
+                "klub": "Groningen",
+                "godina_pocetka": 2011,
+                "godina_zavrsetka": 2013
+            },
+            {
+                "klub": "Celtic",
+                "godina_pocetka": 2013,
+                "godina_zavrsetka": 2015
+            },
+            {
+                "klub": "Southampton",
+                "godina_pocetka": 2015,
+                "godina_zavrsetka": 2018
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "ime": "Luis",
+        "prezime": "D\u00edaz",
+        "pozicija": "Napada\u010d",
+        "broj_dresa": 7,
+        "godine": 27,
+        "visina": 175,
+        "tezina": 70,
+        "drzava": "Kolumbija",
+        "godina_pridruzivanja": 2022,
+        "prosli_klubovi": [
+            {
+                "klub": "FC Porto",
+                "godina_pocetka": 2020,
+                "godina_zavrsetka": 2022
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "ime": "Diogo",
+        "prezime": "Jota",
+        "pozicija": "Napada\u010d",
+        "broj_dresa": 20,
+        "godine": 27,
+        "visina": 178,
+        "tezina": 76,
+        "drzava": "Portugal",
+        "godina_pridruzivanja": 2020,
+        "prosli_klubovi": [
+            {
+                "klub": "Wolverhampton",
+                "godina_pocetka": 2018,
+                "godina_zavrsetka": 2020
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "ime": "Cody",
+        "prezime": "Gakpo",
+        "pozicija": "Napada\u010d",
+        "broj_dresa": 18,
+        "godine": 25,
+        "visina": 186,
+        "tezina": 80,
+        "drzava": "Nizozemska",
+        "godina_pridruzivanja": 2023,
+        "prosli_klubovi": [
+            {
+                "klub": "PSV Eindhoven",
+                "godina_pocetka": 2016,
+                "godina_zavrsetka": 2023
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "ime": "Alisson",
+        "prezime": "Becker",
+        "pozicija": "Golman",
+        "broj_dresa": 1,
+        "godine": 32,
+        "visina": 193,
+        "tezina": 92,
+        "drzava": "Brazil",
+        "godina_pridruzivanja": 2018,
+        "prosli_klubovi": [
+            {
+                "klub": "AS Roma",
+                "godina_pocetka": 2016,
+                "godina_zavrsetka": 2018
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "ime": "Andrew",
+        "prezime": "Robertson",
+        "pozicija": "Brani\u010d",
+        "broj_dresa": 26,
+        "godine": 30,
+        "visina": 178,
+        "tezina": 72,
+        "drzava": "\u0160kotska",
+        "godina_pridruzivanja": 2017,
+        "prosli_klubovi": [
+            {
+                "klub": "Hull City",
+                "godina_pocetka": 2014,
+                "godina_zavrsetka": 2017
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "ime": "Darwin",
+        "prezime": "N\u00fa\u00f1ez",
+        "pozicija": "Napada\u010d",
+        "broj_dresa": 9,
+        "godine": 25,
+        "visina": 187,
+        "tezina": 81,
+        "drzava": "Urugvaj",
+        "godina_pridruzivanja": 2022,
+        "prosli_klubovi": [
+            {
+                "klub": "Benfica",
+                "godina_pocetka": 2020,
+                "godina_zavrsetka": 2022
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "ime": "Wataru",
+        "prezime": "Endo",
+        "pozicija": "Sredi\u0161nji vezni",
+        "broj_dresa": 3,
+        "godine": 31,
+        "visina": 178,
+        "tezina": 77,
+        "drzava": "Japan",
+        "godina_pridruzivanja": 2023,
+        "prosli_klubovi": [
+            {
+                "klub": "VfB Stuttgart",
+                "godina_pocetka": 2020,
+                "godina_zavrsetka": 2023
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "ime": "Trent",
+        "prezime": "Alexander-Arnold",
+        "pozicija": "Brani\u010d",
+        "broj_dresa": 66,
+        "godine": 26,
+        "visina": 175,
+        "tezina": 64,
+        "drzava": "Engleska",
+        "godina_pridruzivanja": 2016,
+        "prosli_klubovi": []
+    }
+]
