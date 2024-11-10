@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtriranje Igrača</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+<h2>Filtriraj Igrače Liverpoola</h2>
+
+<form id="filter-form">
+  <input type="text" id="search" placeholder="Pretraži..." />
+  <select id="attribute">
+    <option value="sve">Svi atributi</option>
+    <option value="ime">Ime</option>
+    <option value="prezime">Prezime</option>
+    <option value="pozicija">Pozicija</option>
+  </select>
+  <button type="submit">Filtriraj</button>
+  <button type="reset">Resetiraj filter</button>
+</form>
+
+<button id="download-csv">Preuzmi CSV</button>
+
+<button id="download-json" onclick="downloadJson()">Preuzmi JSON</button>
+
+<table id="players-table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Ime</th>
+    <th>Prezime</th>
+    <th>Pozicija</th>
+    <th>Broj Dresa</th>
+    <th>Godine</th>
+    <th>Visina</th>
+    <th>Težina</th>
+    <th>Država</th>
+    <th>Godina Pridruživanja</th>
+    <th>Prošli klub
+    <th>Godina Dolaska</th>
+    <th>Godina Odlaska</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+</table>
+
+<script>
+  const apiUrl = "http://127.0.0.1:5000/api/igraci";
+
+  let search = '';
+  let attribute = 'default';
+
+  document.getElementById('filter-form').addEventListener('submit', function(event) {
+    search = document.getElementById('search').value;
+    attribute = document.getElementById('attribute').value;
+    event.preventDefault();
+    fetchData(search, attribute);
+  });
+
+  document.getElementById('filter-form').addEventListener('reset', function(event) {
+    search = '';
+    attribute = 'default';
+    event.preventDefault();
+    fetchData(search, attribute);
+  });
+
+  function fetchData(search, attribute) {
+
+    fetch(`${apiUrl}?search=${search}&attribute=${attribute}`)
+            .then(response => response.json())
+            .then(data => {
+              const tableBody = document.querySelector('#players-table tbody');
+              tableBody.innerHTML = '';
+              data.forEach(player => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                            <td>${player.id}</td>
+                            <td>${player.ime}</td>
+                            <td>${player.prezime}</td>
+                            <td>${player.pozicija}</td>
+                            <td>${player.broj_dresa}</td>
+                            <td>${player.godine}</td>
+                            <td>${player.visina}</td>
+                            <td>${player.tezina}</td>
+                            <td>${player.drzava}</td>
+                            <td>${player.godina_pridruzivanja}</td>
+                            <td>
+                                ${player.prosli_klubovi.length > 0 ? player.prosli_klubovi[0].klub : '-'}
+                            </td>
+                            <td>
+                                ${player.prosli_klubovi.length > 0 ? player.prosli_klubovi[0].godina_pocetka : '-'}
+                            </td>
+                            <td>
+                                ${player.prosli_klubovi.length > 0 ? player.prosli_klubovi[0].godina_zavrsetka : '-'}
+                            </td>
+                        `;
+                tableBody.appendChild(row);
+              });
+            })
+            .catch(error => {
+              console.error('Greška pri dohvaćanju podataka:', error);
+            });
+  }
+
+  document.getElementById('download-csv').addEventListener('click', function() {
+    window.location.href = `${apiUrl}/csv?search=${search}&attribute=${attribute}`;
+  });
+
+  function downloadJson() {
+    fetch(`${apiUrl}?search=${search}&attribute=${attribute}`)
+            .then(response => response.json())
+            .then(data => {
+              const jsonBlob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+              const link = document.createElement('a');
+              link.href = URL.createObjectURL(jsonBlob);
+              link.download = 'igraci_liverpool.json';
+              link.click();
+            })
+            .catch(error => {
+              console.error('Greška pri preuzimanju JSON datoteke:', error);
+            });
+  }
+
+  fetchData(search, attribute);
+</script>
+</body>
+</html>

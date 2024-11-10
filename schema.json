@@ -1,0 +1,729 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://github.com/NikolaBankovic/OR-Labosi/blob/main/igraci_liverpoola.json",
+  "type": "array",
+  "default": [],
+  "title": "Igrači Liverpoola",
+  "description": "Ovaj skup podataka sadrži informacije o igračima nogometnog kluba Liverpool, uključujući njihove osobne podatke i prošle klubove.",
+  "items": {
+    "type": "object",
+    "title": "Igrač",
+    "description": "Objekt koji sadrži podatke o jednom igraču",
+    "required": [
+      "id",
+      "ime",
+      "prezime",
+      "pozicija",
+      "broj_dresa",
+      "godine",
+      "visina",
+      "tezina",
+      "drzava",
+      "godina_pridruzivanja",
+      "prosli_klubovi"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "title": "id igrača",
+        "description": "jedinstveni identifikator igrača",
+        "examples": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          7
+        ]
+      },
+      "ime": {
+        "type": "string",
+        "title": "ime igrača",
+        "description": "ime igrača",
+        "examples": [
+          "Mohamed",
+          "Virgil",
+          "Luis",
+          "Diogo",
+          "Cody",
+          "Alisson",
+          "Andrew",
+          "Darwin",
+          "Wataru",
+          "Trent"
+        ]
+      },
+      "prezime": {
+        "type": "string",
+        "title": "prezime igrača",
+        "description": "prezime igrača",
+        "examples": [
+          "Salah",
+          "van Dijk",
+          "Díaz",
+          "Jota",
+          "Gakpo",
+          "Becker",
+          "Robertson",
+          "Núñez",
+          "Endo",
+          "Alexander-Arnold"
+        ]
+      },
+      "pozicija": {
+        "type": "string",
+        "title": "pozicija igrača",
+        "description": "pozicija na kojoj igrač igra",
+        "examples": [
+          "Napadač",
+          "Branič",
+          "Golman",
+          "Središnji vezni"
+        ]
+      },
+      "broj_dresa": {
+        "type": "integer",
+        "title": "broj dresa igrača",
+        "description": "broj koji igrač nosi na dresu",
+        "examples": [
+          11,
+          4,
+          7,
+          20,
+          18,
+          1,
+          26,
+          9,
+          3,
+          66
+        ]
+      },
+      "godine": {
+        "type": "integer",
+        "title": "starost igrača",
+        "description": "starost igrača u godinama",
+        "examples": [
+          32,
+          33,
+          27,
+          25,
+          30,
+          31,
+          26
+        ]
+      },
+      "visina": {
+        "type": "integer",
+        "title": "visina igrača",
+        "description": "visina igrača u centimetrima",
+        "examples": [
+          175,
+          193,
+          178,
+          186,
+          187
+        ]
+      },
+      "tezina": {
+        "type": "integer",
+        "title": "težina igrača",
+        "description": "težina igrača u kilogramima",
+        "examples": [
+          71,
+          92,
+          70,
+          76,
+          80,
+          72,
+          81,
+          77,
+          64
+        ]
+      },
+      "drzava": {
+        "type": "string",
+        "title": "drzava igrača",
+        "description": "nacionalnost igrača",
+        "examples": [
+          "Egipat",
+          "Nizozemska",
+          "Kolumbija",
+          "Portugal",
+          "Brazil",
+          "Škotska",
+          "Urugvaj",
+          "Japan",
+          "Engleska"
+        ]
+      },
+      "godina_pridruzivanja": {
+        "type": "integer",
+        "title": "godina pridruzivanja igrača",
+        "description": "godina pridruživanja nogometnom klubu Liverpool",
+        "examples": [
+          2017,
+          2018,
+          2022,
+          2020,
+          2023,
+          2016
+        ]
+      },
+      "prosli_klubovi": {
+        "type": "array",
+        "title": "prosli klubovi igrača",
+        "description": "lista prijašnjih klubova igrača",
+        "items": {
+          "type": "object",
+          "title": "prošli klubovi",
+          "description": "Objekt koji sadrži informacije o prijašnjem klubu igrača",
+          "required": [
+            "klub",
+            "godina_pocetka",
+            "godina_zavrsetka"
+          ],
+          "properties": {
+            "klub": {
+              "type": "string",
+              "title": "naziv kluba",
+              "description": "naziv prijašnjeg kluba igrača",
+              "examples": [
+                "Chelsea",
+                "AS Roma",
+                "Groningen",
+                "Celtic",
+                "Southampton",
+                "FC Porto",
+                "Wolverhampton",
+                "PSV Eindhoven",
+                "Hull City",
+                "Benfica",
+                "VfB Stuttgart"
+              ]
+            },
+            "godina_pocetka": {
+              "type": "integer",
+              "title": "godina dolaska u klub ",
+              "description": "godina u kojoj se igrač pridružio prijašnjem klubu",
+              "examples": [
+                2014,
+                2016,
+                2011,
+                2013,
+                2015,
+                2020,
+                2018
+              ]
+            },
+            "godina_zavrsetka": {
+              "type": "integer",
+              "title": "godina napuštanja kluba",
+              "description": "godina u kojoj je igrač napustio prijašnji klub",
+              "examples": [
+                2016,
+                2017,
+                2013,
+                2015,
+                2018,
+                2022,
+                2020,
+                2023
+              ]
+            }
+          },
+          "examples": [{
+            "klub": "Chelsea",
+            "godina_pocetka": 2014,
+            "godina_zavrsetka": 2016
+          },
+            {
+              "klub": "AS Roma",
+              "godina_pocetka": 2016,
+              "godina_zavrsetka": 2017
+            },
+            {
+              "klub": "Groningen",
+              "godina_pocetka": 2011,
+              "godina_zavrsetka": 2013
+            },
+            {
+              "klub": "Celtic",
+              "godina_pocetka": 2013,
+              "godina_zavrsetka": 2015
+            },
+            {
+              "klub": "Southampton",
+              "godina_pocetka": 2015,
+              "godina_zavrsetka": 2018
+            },
+            {
+              "klub": "FC Porto",
+              "godina_pocetka": 2020,
+              "godina_zavrsetka": 2022
+            },
+            {
+              "klub": "Wolverhampton",
+              "godina_pocetka": 2018,
+              "godina_zavrsetka": 2020
+            },
+            {
+              "klub": "PSV Eindhoven",
+              "godina_pocetka": 2016,
+              "godina_zavrsetka": 2023
+            },
+            {
+              "klub": "AS Roma",
+              "godina_pocetka": 2016,
+              "godina_zavrsetka": 2018
+            },
+            {
+              "klub": "Hull City",
+              "godina_pocetka": 2014,
+              "godina_zavrsetka": 2017
+            },
+            {
+              "klub": "Benfica",
+              "godina_pocetka": 2020,
+              "godina_zavrsetka": 2022
+            },
+            {
+              "klub": "VfB Stuttgart",
+              "godina_pocetka": 2020,
+              "godina_zavrsetka": 2023
+            }]
+        },
+        "examples": [
+          [{
+            "klub": "Chelsea",
+            "godina_pocetka": 2014,
+            "godina_zavrsetka": 2016
+          },
+            {
+              "klub": "AS Roma",
+              "godina_pocetka": 2016,
+              "godina_zavrsetka": 2017
+            }],
+          [{
+            "klub": "Groningen",
+            "godina_pocetka": 2011,
+            "godina_zavrsetka": 2013
+          },
+            {
+              "klub": "Celtic",
+              "godina_pocetka": 2013,
+              "godina_zavrsetka": 2015
+            },
+            {
+              "klub": "Southampton",
+              "godina_pocetka": 2015,
+              "godina_zavrsetka": 2018
+            }],
+          [{
+            "klub": "FC Porto",
+            "godina_pocetka": 2020,
+            "godina_zavrsetka": 2022
+          }],
+          [{
+            "klub": "Wolverhampton",
+            "godina_pocetka": 2018,
+            "godina_zavrsetka": 2020
+          }],
+          [{
+            "klub": "PSV Eindhoven",
+            "godina_pocetka": 2016,
+            "godina_zavrsetka": 2023
+          }],
+          [{
+            "klub": "AS Roma",
+            "godina_pocetka": 2016,
+            "godina_zavrsetka": 2018
+          }],
+          [{
+            "klub": "Hull City",
+            "godina_pocetka": 2014,
+            "godina_zavrsetka": 2017
+          }],
+          [{
+            "klub": "Benfica",
+            "godina_pocetka": 2020,
+            "godina_zavrsetka": 2022
+          }],
+          [{
+            "klub": "VfB Stuttgart",
+            "godina_pocetka": 2020,
+            "godina_zavrsetka": 2023
+          }],
+          []
+        ]
+      }
+    },
+    "examples": [{
+      "id": 1,
+      "ime": "Mohamed",
+      "prezime": "Salah",
+      "pozicija": "Napadač",
+      "broj_dresa": 11,
+      "godine": 32,
+      "visina": 175,
+      "tezina": 71,
+      "drzava": "Egipat",
+      "godina_pridruzivanja": 2017,
+      "prosli_klubovi": [{
+        "klub": "Chelsea",
+        "godina_pocetka": 2014,
+        "godina_zavrsetka": 2016
+      },
+        {
+          "klub": "AS Roma",
+          "godina_pocetka": 2016,
+          "godina_zavrsetka": 2017
+        }]
+    },
+      {
+        "id": 2,
+        "ime": "Virgil",
+        "prezime": "van Dijk",
+        "pozicija": "Branič",
+        "broj_dresa": 4,
+        "godine": 33,
+        "visina": 193,
+        "tezina": 92,
+        "drzava": "Nizozemska",
+        "godina_pridruzivanja": 2018,
+        "prosli_klubovi": [{
+          "klub": "Groningen",
+          "godina_pocetka": 2011,
+          "godina_zavrsetka": 2013
+        },
+          {
+            "klub": "Celtic",
+            "godina_pocetka": 2013,
+            "godina_zavrsetka": 2015
+          },
+          {
+            "klub": "Southampton",
+            "godina_pocetka": 2015,
+            "godina_zavrsetka": 2018
+          }]
+      },
+      {
+        "id": 3,
+        "ime": "Luis",
+        "prezime": "Díaz",
+        "pozicija": "Napadač",
+        "broj_dresa": 7,
+        "godine": 27,
+        "visina": 175,
+        "tezina": 70,
+        "drzava": "Kolumbija",
+        "godina_pridruzivanja": 2022,
+        "prosli_klubovi": [{
+          "klub": "FC Porto",
+          "godina_pocetka": 2020,
+          "godina_zavrsetka": 2022
+        }]
+      },
+      {
+        "id": 4,
+        "ime": "Diogo",
+        "prezime": "Jota",
+        "pozicija": "Napadač",
+        "broj_dresa": 20,
+        "godine": 27,
+        "visina": 178,
+        "tezina": 76,
+        "drzava": "Portugal",
+        "godina_pridruzivanja": 2020,
+        "prosli_klubovi": [{
+          "klub": "Wolverhampton",
+          "godina_pocetka": 2018,
+          "godina_zavrsetka": 2020
+        }]
+      },
+      {
+        "id": 5,
+        "ime": "Cody",
+        "prezime": "Gakpo",
+        "pozicija": "Napadač",
+        "broj_dresa": 18,
+        "godine": 25,
+        "visina": 186,
+        "tezina": 80,
+        "drzava": "Nizozemska",
+        "godina_pridruzivanja": 2023,
+        "prosli_klubovi": [{
+          "klub": "PSV Eindhoven",
+          "godina_pocetka": 2016,
+          "godina_zavrsetka": 2023
+        }]
+      },
+      {
+        "id": 6,
+        "ime": "Alisson",
+        "prezime": "Becker",
+        "pozicija": "Golman",
+        "broj_dresa": 1,
+        "godine": 32,
+        "visina": 193,
+        "tezina": 92,
+        "drzava": "Brazil",
+        "godina_pridruzivanja": 2018,
+        "prosli_klubovi": [{
+          "klub": "AS Roma",
+          "godina_pocetka": 2016,
+          "godina_zavrsetka": 2018
+        }]
+      },
+      {
+        "id": 8,
+        "ime": "Andrew",
+        "prezime": "Robertson",
+        "pozicija": "Branič",
+        "broj_dresa": 26,
+        "godine": 30,
+        "visina": 178,
+        "tezina": 72,
+        "drzava": "Škotska",
+        "godina_pridruzivanja": 2017,
+        "prosli_klubovi": [{
+          "klub": "Hull City",
+          "godina_pocetka": 2014,
+          "godina_zavrsetka": 2017
+        }]
+      },
+      {
+        "id": 9,
+        "ime": "Darwin",
+        "prezime": "Núñez",
+        "pozicija": "Napadač",
+        "broj_dresa": 9,
+        "godine": 25,
+        "visina": 187,
+        "tezina": 81,
+        "drzava": "Urugvaj",
+        "godina_pridruzivanja": 2022,
+        "prosli_klubovi": [{
+          "klub": "Benfica",
+          "godina_pocetka": 2020,
+          "godina_zavrsetka": 2022
+        }]
+      },
+      {
+        "id": 10,
+        "ime": "Wataru",
+        "prezime": "Endo",
+        "pozicija": "Središnji vezni",
+        "broj_dresa": 3,
+        "godine": 31,
+        "visina": 178,
+        "tezina": 77,
+        "drzava": "Japan",
+        "godina_pridruzivanja": 2023,
+        "prosli_klubovi": [{
+          "klub": "VfB Stuttgart",
+          "godina_pocetka": 2020,
+          "godina_zavrsetka": 2023
+        }]
+      },
+      {
+        "id": 7,
+        "ime": "Trent",
+        "prezime": "Alexander-Arnold",
+        "pozicija": "Branič",
+        "broj_dresa": 66,
+        "godine": 26,
+        "visina": 175,
+        "tezina": 64,
+        "drzava": "Engleska",
+        "godina_pridruzivanja": 2016,
+        "prosli_klubovi": []
+      }]
+  },
+  "examples": [
+    [{
+      "id": 1,
+      "ime": "Mohamed",
+      "prezime": "Salah",
+      "pozicija": "Napadač",
+      "broj_dresa": 11,
+      "godine": 32,
+      "visina": 175,
+      "tezina": 71,
+      "drzava": "Egipat",
+      "godina_pridruzivanja": 2017,
+      "prosli_klubovi": [{
+        "klub": "Chelsea",
+        "godina_pocetka": 2014,
+        "godina_zavrsetka": 2016
+      },
+        {
+          "klub": "AS Roma",
+          "godina_pocetka": 2016,
+          "godina_zavrsetka": 2017
+        }]
+    },
+      {
+        "id": 2,
+        "ime": "Virgil",
+        "prezime": "van Dijk",
+        "pozicija": "Branič",
+        "broj_dresa": 4,
+        "godine": 33,
+        "visina": 193,
+        "tezina": 92,
+        "drzava": "Nizozemska",
+        "godina_pridruzivanja": 2018,
+        "prosli_klubovi": [{
+          "klub": "Groningen",
+          "godina_pocetka": 2011,
+          "godina_zavrsetka": 2013
+        },
+          {
+            "klub": "Celtic",
+            "godina_pocetka": 2013,
+            "godina_zavrsetka": 2015
+          },
+          {
+            "klub": "Southampton",
+            "godina_pocetka": 2015,
+            "godina_zavrsetka": 2018
+          }]
+      },
+      {
+        "id": 3,
+        "ime": "Luis",
+        "prezime": "Díaz",
+        "pozicija": "Napadač",
+        "broj_dresa": 7,
+        "godine": 27,
+        "visina": 175,
+        "tezina": 70,
+        "drzava": "Kolumbija",
+        "godina_pridruzivanja": 2022,
+        "prosli_klubovi": [{
+          "klub": "FC Porto",
+          "godina_pocetka": 2020,
+          "godina_zavrsetka": 2022
+        }]
+      },
+      {
+        "id": 4,
+        "ime": "Diogo",
+        "prezime": "Jota",
+        "pozicija": "Napadač",
+        "broj_dresa": 20,
+        "godine": 27,
+        "visina": 178,
+        "tezina": 76,
+        "drzava": "Portugal",
+        "godina_pridruzivanja": 2020,
+        "prosli_klubovi": [{
+          "klub": "Wolverhampton",
+          "godina_pocetka": 2018,
+          "godina_zavrsetka": 2020
+        }]
+      },
+      {
+        "id": 5,
+        "ime": "Cody",
+        "prezime": "Gakpo",
+        "pozicija": "Napadač",
+        "broj_dresa": 18,
+        "godine": 25,
+        "visina": 186,
+        "tezina": 80,
+        "drzava": "Nizozemska",
+        "godina_pridruzivanja": 2023,
+        "prosli_klubovi": [{
+          "klub": "PSV Eindhoven",
+          "godina_pocetka": 2016,
+          "godina_zavrsetka": 2023
+        }]
+      },
+      {
+        "id": 6,
+        "ime": "Alisson",
+        "prezime": "Becker",
+        "pozicija": "Golman",
+        "broj_dresa": 1,
+        "godine": 32,
+        "visina": 193,
+        "tezina": 92,
+        "drzava": "Brazil",
+        "godina_pridruzivanja": 2018,
+        "prosli_klubovi": [{
+          "klub": "AS Roma",
+          "godina_pocetka": 2016,
+          "godina_zavrsetka": 2018
+        }]
+      },
+      {
+        "id": 8,
+        "ime": "Andrew",
+        "prezime": "Robertson",
+        "pozicija": "Branič",
+        "broj_dresa": 26,
+        "godine": 30,
+        "visina": 178,
+        "tezina": 72,
+        "drzava": "Škotska",
+        "godina_pridruzivanja": 2017,
+        "prosli_klubovi": [{
+          "klub": "Hull City",
+          "godina_pocetka": 2014,
+          "godina_zavrsetka": 2017
+        }]
+      },
+      {
+        "id": 9,
+        "ime": "Darwin",
+        "prezime": "Núñez",
+        "pozicija": "Napadač",
+        "broj_dresa": 9,
+        "godine": 25,
+        "visina": 187,
+        "tezina": 81,
+        "drzava": "Urugvaj",
+        "godina_pridruzivanja": 2022,
+        "prosli_klubovi": [{
+          "klub": "Benfica",
+          "godina_pocetka": 2020,
+          "godina_zavrsetka": 2022
+        }]
+      },
+      {
+        "id": 10,
+        "ime": "Wataru",
+        "prezime": "Endo",
+        "pozicija": "Središnji vezni",
+        "broj_dresa": 3,
+        "godine": 31,
+        "visina": 178,
+        "tezina": 77,
+        "drzava": "Japan",
+        "godina_pridruzivanja": 2023,
+        "prosli_klubovi": [{
+          "klub": "VfB Stuttgart",
+          "godina_pocetka": 2020,
+          "godina_zavrsetka": 2023
+        }]
+      },
+      {
+        "id": 7,
+        "ime": "Trent",
+        "prezime": "Alexander-Arnold",
+        "pozicija": "Branič",
+        "broj_dresa": 66,
+        "godine": 26,
+        "visina": 175,
+        "tezina": 64,
+        "drzava": "Engleska",
+        "godina_pridruzivanja": 2016,
+        "prosli_klubovi": []
+      }]
+  ]
+}
