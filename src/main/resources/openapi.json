@@ -1,0 +1,318 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Igraci Liverpoola API",
+    "description": "OR_Labosi API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/player": {
+      "get": {
+        "summary": "Get all player object from collection",
+        "description": "Returns list of all players",
+        "operationId": "getAllIgraci",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Igrac"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create player",
+        "description": "Creates player object",
+        "operationId": "addIgrac",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Igrac"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Igrac"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Argument Type Not Valid"
+          }
+        }
+      }
+    },
+    "/api/player/{id}": {
+      "get": {
+        "summary": "Get player from collection by ID",
+        "description": "Fetches single player object by ID",
+        "operationId": "getIgracById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Igrac"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Argument Type Mismatch"
+          },
+          "404": {
+            "description": "Player with the provided ID doesn't exist"
+          }
+        }
+      },
+      "put": {
+        "summary": "Put player in collection by ID",
+        "description": "Updates single player in collection",
+        "operationId": "updateIgrac",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Igrac"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Igrac"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Argument Type Not Valid"
+          },
+          "404": {
+            "description": "Igrac not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete player from collection by ID",
+        "description": "Deletes single player from collection",
+        "operationId": "deleteIgrac",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                    "status": "OK",
+                    "message": "Player successfully deleted",
+                    "response": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/player/name": {
+      "get": {
+        "summary": "GET api/player/name",
+        "operationId": "searchByIme",
+        "parameters": [
+          {
+            "name": "ime",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Igrac"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/player/position": {
+      "get": {
+        "summary": "GET api/player/position",
+        "operationId": "filterByPozicija",
+        "parameters": [
+          {
+            "name": "pozicija",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Igrac"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/player/height": {
+      "get": {
+        "summary": "GET api/player/height",
+        "operationId": "filterByVisina",
+        "parameters": [
+          {
+            "name": "minVisina",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Igrac"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Argument Type Mismatch"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Igrac": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ime": {
+            "type": "string"
+          },
+          "prezime": {
+            "type": "string"
+          },
+          "pozicija": {
+            "type": "string"
+          },
+          "brojDresa": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "godine": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "visina": {
+            "type": "number",
+            "format": "double"
+          },
+          "tezina": {
+            "type": "number",
+            "format": "double"
+          },
+          "drzava": {
+            "type": "string"
+          },
+          "godinaPridruzivanja": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Void": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+}
