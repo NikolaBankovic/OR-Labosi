@@ -1,0 +1,14 @@
+<!-- src/main/resources/templates/profile.html -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<body>
+<h2>Korisnički profil</h2>
+<div sec:authorize="isAuthenticated()">
+    <p th:text="'Ime korisnika: ' + ${profile.get('name')}"></p>
+    <p th:text="'Korisničko ime korisnika: ' + ${profile.get('username')}"></p>
+    <p th:text="'email korisnika: ' + ${profile.get('email')}"></p>
+    <a th:href="@{/}">Povratak na početnu stranicu</a>
+    <br>
+    <a th:href="@{/logout}">Log Out</a>
+</div>
+</body>
+</html>

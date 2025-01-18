@@ -19,7 +19,7 @@ public class OpenApiController {
 
     @GetMapping(value = "/openapi.json", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getOpenApiSpec() throws IOException {
-        Path specPath = new ClassPathResource("backend/openapi.json").getFile().toPath();
+        Path specPath = new ClassPathResource("openapi.json").getFile().toPath();
         String spec = Files.readString(specPath);
         return ResponseEntity.ok(spec);
     }
